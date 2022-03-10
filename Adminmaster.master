@@ -1,0 +1,157 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Adminmaster.master.cs" Inherits="Adminmaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+   <title>Plant Vault</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="normalize.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript" src="js/startstop-slider.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var pull = $('#pull');
+            menu = $('nav ul');
+            menuHeight = menu.height();
+
+            $(pull).on('click', function (e) {
+                e.preventDefault();
+                menu.slideToggle();
+            });
+            $(window).resize(function () {
+                var w = $(window).width();
+                if (w > 320 && menu.is(':hidden')) {
+                    menu.removeAttr('style');
+                }
+            });
+        });
+    </script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+          <!--header start-->
+        <div class="wrap">
+            <div class="header">
+            <div class="headertop_desc">
+                <div class="call">
+                    <asp:Label ID="lblTitle" runat="server" Text="" class="titlelabel"></asp:Label>
+                </div>
+                <div class="account_desc">
+                    <ul>
+                       
+                      <li><a href="ComplainAll.aspx">Complains</a></li>
+                        <li><a href="FeedbackAll.aspx">Feedbacks</a></li>
+                         <li><a href="Login.aspx">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="header_top">
+                <div class="logo">
+                    <a href="home.html">
+                        <img src="images/logo1.jpg" alt="" />
+                    </a>
+                </div>
+
+                <div class="clear"></div>
+            </div>
+            <div>
+                <nav class="clearfix">
+                    <a href="#" id="pull">Menu</a>
+                    <ul class="clearfix">
+                         
+                        <li><a href="manageProfile.aspx">Profile</a></li>
+                        <li><a href="Holder.aspx">Holder</a></li>
+                        <li><a href="ManageUser.aspx">User</a></li>
+                        <li><a href="Country.aspx">Country</a></li>
+                        <li><a href="State.aspx">State</a></li>
+                        <li><a href="City.aspx">City</a></li>
+                        <li><a href="Category.aspx">Category</a></li>
+                        <li><a href="plantadmin.aspx">Plants</a></li>
+                        <li><a href="ManageFertilizer.aspx">Fertilizer</a></li>
+                         <li><asp:LinkButton Text="Logout" class="nav-link" ID="btnLogout" runat="server" OnClick="btnLogout_Click"></asp:LinkButton></li>
+                        <div class="clear">
+
+                        </div>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+           
+   
+          <!--header End-->
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+          <!--footer start-->
+             <div class="footer">
+        <div class="wrap">
+            <div class="section group">
+                <div class="col_1_of_4 span_1_of_4">
+                    <h4>Information</h4>
+                    <ul>
+                       
+                        <li><a href="Country.aspx">Country</a></li>
+                        <li><a href="State.aspx">State</a></li>
+                        <li><a href="City.aspx">City</a></li>
+                        <li><a href="Category.aspx">Category</a></li>
+                        <li><a href="#">&nbsp;</a></li>
+                    </ul>
+                </div>
+                <div class="col_1_of_4 span_1_of_4">
+                    <h4>My account</h4>
+                    <ul>
+                       
+                        <li><a href="AllOrder.aspx">View All Order</a></li>                        
+                        <li><a href="ContactAll.aspx">Contacts</a></li>
+                        <li><a href="ComplainAll.aspx">All Complain</a></li>
+                        <li><a href="ChangePassword.aspx">Change Password</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="col_1_of_4 span_1_of_4">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><span>1234567891</span></li>
+                    </ul>
+                    <div class="social-icons">
+                        <h4>Follow Us</h4>
+                        <ul>
+                            <li class="social-facebook"><a href="#" target="_blank"></a></li>
+                            <li class="social-twitter"><a href="#" target="_blank"></a></li>
+                            <li class="social-skype"><a href="#" target="_blank"></a></li>
+                           
+                            <div class="clear"></div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy_right">
+            <p>All rights Reseverd | Managed By  </p>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+    </script>
+    <a href="#" id="toTop"><span id="toTopHover"></span></a>
+
+            <!--footer end-->
+    </div>
+            </div>
+    </form>
+</body>
+</html>
