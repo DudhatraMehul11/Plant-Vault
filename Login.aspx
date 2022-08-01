@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/homemaster.master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
+﻿    <%@ Page Title="" Language="C#" MasterPageFile="~/homemaster.master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderId="head" runat="Server">
 </asp:Content>
@@ -11,7 +11,8 @@
                     <div class="col span_2_of_3">
                         <div class="contact-form">
                             <h2>Login</h2>
-
+                            <asp:HiddenField runat ="server" ID="hdnType" />
+                            <asp:HiddenField runat ="server" ID="hdnPlantId" />
                             <div class="row">
 
                                 <span>                                   

@@ -40,10 +40,9 @@
                             <asp:BoundField HeaderText="Gender" DataField="gender" />
                             <asp:BoundField HeaderText="Postal Code" DataField="postal_code" />
                             <asp:BoundField HeaderText="Address" DataField="address" />
-                            <asp:BoundField HeaderText="City ID" DataField="city_id" />
-                             <asp:BoundField HeaderText="State ID" DataField="state_id" />
-                            <asp:BoundField HeaderText="Country ID" DataField="country_id" />
-                            <asp:BoundField HeaderText="Login ID" DataField="login_id" />
+                             <asp:BoundField HeaderText="State Name" DataField="state_name" />
+                            <asp:BoundField HeaderText="Country Name" DataField="country_name" />
+                           <%-- <asp:BoundField HeaderText="Login ID" DataField="login_id" />--%>
                         </Columns>
                     </asp:GridView>
                 </div>

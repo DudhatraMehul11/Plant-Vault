@@ -15,7 +15,7 @@ public partial class ManageUser : System.Web.UI.Page
 
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
         con.Open();
-        string query = "select registration_id as id, first_name, middle_name, last_name, email_id, mobile_no, phone_no, gender, birth_date, postal_code, address, city_id, state_id, country_id, login_id from registration where login_id !=1";
+        string query = "select registration_id as id, first_name, middle_name, last_name, email_id, mobile_no, phone_no, gender, birth_date, postal_code, address,state_name,country_name from registration inner join state on registration.state_id=state.state_id inner join country on registration.country_id=country.country_id where login_id !=1";
         SqlCommand cmd = new SqlCommand(query, con);
         cmd.CommandType = CommandType.Text;
         DataTable dt = new DataTable();

@@ -37,7 +37,7 @@ public partial class ManageFertilizer : System.Web.UI.Page
     {
         SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
         cn.Open();
-        SqlCommand cmd = new SqlCommand("select fertilizer_id as FertilizerId,(cast(fertilizer_name as nvarchar(10))+ case when len(fertilizer_name) > 16 then '...' else '' end )as FertilizerName,price,image1 from fertilizer where category_id in(" + category_id + ") Order by fertilizer_id desc", cn);
+        SqlCommand cmd = new SqlCommand("select fertilizer_id as FertilizerId,(cast(fertilizer_name as nvarchar(10))+ case when len(fertilizer_name) > 16 then '...' else '' end )as FertilizerName,price,image1,status_check from fertilizer where category_id in(" + category_id + ")AND status_check=1 Order by fertilizer_id desc", cn);
         SqlDataAdapter sda = new SqlDataAdapter(cmd);
         DataTable dt = new DataTable();
         sda.Fill(dt);

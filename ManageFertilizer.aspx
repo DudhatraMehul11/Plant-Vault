@@ -31,7 +31,7 @@
                                         <p><span class="rupees">Rs.<%#Eval("price") %></span></p>
                                     </div>
                                     <div class="add-cart">
-                                        <h4><a href="#" %>View</a></h4>
+                                        <h4><a href="view.aspx?productId=<%#Eval("FertilizerId")%>">View</a></h4>
                                     </div>
                                     <div class="clear"></div>
                                 </div>

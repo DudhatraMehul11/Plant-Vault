@@ -37,13 +37,14 @@ public partial class plantadmin : System.Web.UI.Page
     {
         SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
         cn.Open();
-        SqlCommand cmd = new SqlCommand("select plant_id as PlantId,(cast(plant_name as nvarchar(10))+ case when len(plant_name) > 16 then '...' else '' end )as PlantName,price,image1 from ItemDetail where category_id in(" + category_id + ") Order by plant_id desc", cn);
+        SqlCommand cmd = new SqlCommand("select plant_id as PlantId,(cast(plant_name as nvarchar(10))+ case when len(plant_name) > 16 then '...' else '' end )as PlantName,price,image1,status_check from ItemDetail where category_id in(" + category_id + ")AND status_check=1 Order by plant_id desc", cn);
         SqlDataAdapter sda = new SqlDataAdapter(cmd);
         DataTable dt = new DataTable();
         sda.Fill(dt);
         cn.Close();
         rptProducts.DataSource = dt;
         rptProducts.DataBind();
+
     }
     protected void ddlCategory_SelectedIndexChanged(object sender, EventArgs e)
     {

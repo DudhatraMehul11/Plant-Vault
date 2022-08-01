@@ -71,7 +71,7 @@
                             <li><a href="profile.aspx">Profile</a></li>
                             <li><a href="PostFertilizer.aspx">Fertilizer</a></li>
                             <li><a href="plantholder.aspx">Plants</a></li>
-                            <li><a href="UserOrder.aspx">User Order</a></li>
+                            <li><a href="HolderOrderView.aspx">User Order</a></li>
                             <%-- <li><a href="Login.aspx">Logout</a></li>--%>
                              <li><asp:LinkButton Text="Logout" class="nav-link" ID="btnLogout" runat="server" OnClick="btnLogout_Click"></asp:LinkButton></li>
                             <div class="clear">

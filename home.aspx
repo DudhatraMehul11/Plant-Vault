@@ -104,7 +104,7 @@
                     </div>
                     <div class="clear"></div>
                 </div>
-                <div class="section group">
+                <%--<div class="section group">
                     <div class="grid_1_of_4 images_1_of_4">
                         <a href="#">
                             <img src="UploadPhoto/Krishna Tulsi_1_352429ca-5384-40f3-9c1a-133d5ba2ea4e.jpg" alt="Krishna Tulasi" height="170" width="170" />
@@ -226,7 +226,27 @@
                             <div class="clear"></div>
                         </div>
                     </div>
-                </div>
+                </div>--%>
+                <div class="section group">
+                <asp:repeater id="rptProducts" runat="server">
+                    <ItemTemplate>
+                        <div class="grid_1_of_4 images_1_of_4" >
+                            <a href="ViewProductDetailPage.aspx?productId=<%#Eval("PlantId") %>">
+                                 <img src="<%#Eval("image1") %>"  alt="<%#Eval("PlantName") %>"  height="170" width="170"/></a>
+                            <h2><%#Eval("PlantName") %></h2>
+                            <div class="price-details">
+                                <div class="price-number">
+                                    <p><span class="rupees">Rs.<%#Eval("price") %></span></p>
+                                </div>
+                                <div class="add-cart">
+                                    <h4><a href="ViewProductDetailPage.aspx?productId=<%#Eval("PlantId") %>">Add to Cart</a></h4>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                </asp:repeater>
+            </div>
             </div>
         </div>
 
